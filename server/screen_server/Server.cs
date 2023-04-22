@@ -103,8 +103,8 @@ namespace screen_server
         public void startService()
         {
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            //IPAddress ip = IPAddress.Parse(localIP);
-            IPAddress ip = IPAddress.Parse("26.205.213.71");
+            IPAddress ip = IPAddress.Parse(localIP);
+            //IPAddress ip = IPAddress.Parse("26.205.213.71");
             server.Bind(new IPEndPoint(ip, listenPort));
             server.Listen(10);
             myThread = new Thread(ListenClientConnect);
